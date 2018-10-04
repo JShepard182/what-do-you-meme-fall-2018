@@ -1,7 +1,14 @@
-
 const math = require('./math');
+const express = require('express');
 
-var something = math.add(1, 2);
+const app = express();
 
+app.get("/add", function(req, res){
+    var something = math.add(1, 2);
+    res.send({something: something});
+});
+app.use("/", function(req, res, next){
+    res.send("hello world");
+});
 
-console.log("1 + 2 = " + something);
+app.listen(3000);
