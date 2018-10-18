@@ -13,4 +13,5 @@ app.use('/game', game);
 
 app.listen(port);
 
-console.log('listening on: http://&(server):$(port)');
+//eslint-disable-next-line no-console
+console.log(`listening on: http://${server}:${port}`);
